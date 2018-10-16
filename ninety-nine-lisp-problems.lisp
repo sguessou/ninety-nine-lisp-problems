@@ -37,3 +37,18 @@
       ((null reversed) nil)
       ((<= (length reversed) 2) my-list)
       (t (list (second reversed) (first reversed))))))
+
+;;;; P03
+;;; Find the K'th element of a list
+;; My solution
+(defun element-at (my-list num)
+  (if (<= num 0)
+      nil
+      (nth (1- num) my-list)))
+
+;; Alternative solution
+(defun element-at-2 (my-list num)
+  (cond 
+    ((= num 0) nil) 
+    ((= num 1) (first my-list))  
+    (t (element-at-2 (rest my-list) (1- num)))))

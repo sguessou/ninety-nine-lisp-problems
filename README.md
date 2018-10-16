@@ -15,6 +15,12 @@ Example:
 CL-USER> (my-but-last '(a b c d))
 CL-USER> (C D)
 ```
+#### Problem #3:
+*Find the K'th element of a list.*
+```
+CL-USER> (element-at '(a b c d e) 3)
+CL-USER> C
+```
 
 
 
