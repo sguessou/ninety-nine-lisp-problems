@@ -24,8 +24,16 @@
 ;;; P02
 ;;; Find the last but one box of a list
 ;; My solution
-((defun my-but-last (my-list)
+(defun my-but-last (my-list)
    (let ((len (list-length my-list)))
      (if (> len 2)
          (list (nth (- len 2) my-list) (nth (- len 1) my-list))
-         my-list))))
+         my-list)))
+
+;; Alternative solution
+(defun get-penultimate (my-list)
+  (let ((reversed (reverse my-list)))
+    (cond 
+      ((null reversed) nil)
+      ((<= (length reversed) 2) my-list)
+      (t (list (second reversed) (first reversed))))))
