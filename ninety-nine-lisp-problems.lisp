@@ -52,3 +52,15 @@
     ((= num 0) nil) 
     ((= num 1) (first my-list))  
     (t (element-at-2 (rest my-list) (1- num)))))
+
+;;;; P04
+;;; Find the number of elements of a list 
+;; My solution
+(defun list-len (my-list)
+  (list-length my-list))
+;; Alternative solution 
+(defun list-len-2 (my-list &optional len)
+  (if (null len) (setf len 0))
+  (if (null (rest my-list)) 
+      (1+ len)
+      (list-len-2 (rest my-list) (1+ len))))
