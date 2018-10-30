@@ -59,8 +59,20 @@
 (defun list-len (my-list)
   (list-length my-list))
 ;; Alternative solution 
-(defun list-len-2 (my-list &optional len)
-  (if (null len) (setf len 0))
-  (if (null (rest my-list)) 
-      (1+ len)
-      (list-len-2 (rest my-list) (1+ len))))
+(defun list-len-2 (my-list)
+  (if (null my-list)
+      0
+      (1+ (list-len-2 (rest my-list)))))
+
+;;;; P05
+;;; Reverse a list
+;; My solution
+(defun reverse-list (my-list)
+  (reverse my-list))
+
+;;;; P06 
+;;; Find out wheter a list is a palindrome
+(defun palindrome (my-list)
+  (if (null my-list)
+      nil
+      (equal my-list (reverse my-list))))

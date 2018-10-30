@@ -22,5 +22,17 @@ CL-USER> C
 #### Problem #4:
 *Find the number of elements of a list.*
 
+#### Problem #5:
+*Reverse a list.*
+
+#### Problem #6:
+*Find out whether a list is a palindrome.*
+```
+CL-USER> (palindrome '(X A M A X))
+T
+CL-USER> (palindrome '(H E L L O))
+NIL
+```
+
 
 
